@@ -1,9 +1,6 @@
 package digital.novasmart.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,8 +8,12 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "usuarios")
 public class Usuario {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "usuario_id")
     private Integer id;
 
     private String login;
@@ -26,8 +27,10 @@ public class Usuario {
     @Column(name = "data_ultimo_login")
     private LocalDateTime dataUltimoLogin;
 
-    public Usuario(Integer id, String login, String senha, LocalDateTime dataCadastro, LocalDateTime dataUltimoLogin) {
-        this.id = id;
+    public Usuario() {
+    }
+
+    public Usuario(String login, String senha, LocalDateTime dataCadastro, LocalDateTime dataUltimoLogin, Integer morador) {
         this.login = login;
         this.senha = senha;
         this.dataCadastro = dataCadastro;

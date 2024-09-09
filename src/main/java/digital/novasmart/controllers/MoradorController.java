@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@ResponseBody
+@RestController
+@RequestMapping("/moradores")
 public class MoradorController {
 
     @Autowired
     private MoradorRepository moradorRepository;
 
-    @GetMapping
-    @RequestMapping("/listar")
+    @GetMapping("/listar")
+    @ResponseBody
     public ResponseEntity<List<Morador>> findAll () {
         List<Morador> moradores = moradorRepository.findAll();
         if (!moradores.isEmpty()) {

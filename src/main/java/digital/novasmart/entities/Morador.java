@@ -3,22 +3,21 @@ package digital.novasmart.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Morador")
+@Table(name = "moradores")
 public class Morador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String documento;
     private String nome;
-    private String telefone;
     private String sobrenome;
+    private String telefone;
+    private String documento;
 
     public Morador() {
     }
 
-    public Morador(Integer id, String documento, String nome, String sobrenome, String telefone) {
-        this.id = id;
+    public Morador(String nome, String sobrenome, String telefone, String documento) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.telefone = telefone;
@@ -27,10 +26,6 @@ public class Morador {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getNome() {
