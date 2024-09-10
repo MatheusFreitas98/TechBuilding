@@ -1,11 +1,9 @@
 package digital.novasmart.controllers;
 
-import digital.novasmart.entities.Morador;
 import digital.novasmart.entities.Usuario;
 import digital.novasmart.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

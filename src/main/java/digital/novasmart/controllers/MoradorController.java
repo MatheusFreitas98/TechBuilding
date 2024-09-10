@@ -1,10 +1,9 @@
 package digital.novasmart.controllers;
 
-import digital.novasmart.entities.Morador;
+import digital.novasmart.entities.Pessoa;
 import digital.novasmart.repositories.MoradorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +17,8 @@ public class MoradorController {
 
     @GetMapping("/listar")
     @ResponseBody
-    public ResponseEntity<List<Morador>> findAll () {
-        List<Morador> moradores = moradorRepository.findAll();
+    public ResponseEntity<List<Pessoa>> findAll () {
+        List<Pessoa> moradores = moradorRepository.findAll();
         if (!moradores.isEmpty()) {
             return ResponseEntity.ok(moradores);
         }
@@ -28,8 +27,8 @@ public class MoradorController {
 
     @PostMapping("/adicionar")
     @ResponseBody
-    public Morador add(@RequestBody Morador morador) {
-        return moradorRepository.save(morador);
+    public Pessoa add(@RequestBody Pessoa pessoa) {
+        return moradorRepository.save(pessoa);
     }
 }
 

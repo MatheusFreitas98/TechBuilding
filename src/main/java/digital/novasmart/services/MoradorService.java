@@ -1,6 +1,6 @@
 package digital.novasmart.services;
 
-import digital.novasmart.entities.Morador;
+import digital.novasmart.entities.Pessoa;
 import digital.novasmart.repositories.MoradorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,11 @@ public class MoradorService {
     @Autowired
     private MoradorRepository moradorRepository;
 
-    public Morador salvar(Morador morador) {
-        return moradorRepository.save(morador);
+    public Pessoa salvar(Pessoa pessoa) {
+        return moradorRepository.save(pessoa);
     }
 
-    public List<Morador> listarTodos() {
+    public List<Pessoa> listarTodos() {
         return moradorRepository.findAll();
     }
 }
