@@ -1,7 +1,7 @@
 package digital.novasmart.controllers;
 
 import digital.novasmart.entities.Usuario;
-import digital.novasmart.repositories.UsuarioRepository;
+import digital.novasmart.repositories.PessoaController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,13 +13,13 @@ import java.util.List;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
-    
+    private PessoaController pessoaController;
+
 
     @GetMapping("/listar")
     @ResponseBody
     public ResponseEntity<List<Usuario>> findAll () {
-        List<Usuario> usuarios = usuarioRepository.findAll();
+        List<Usuario> usuarios = pessoaController.findAll();
         if (!usuarios.isEmpty()) {
             return ResponseEntity.ok(usuarios);
         }
@@ -29,6 +29,6 @@ public class UsuarioController {
     @PostMapping("/adicionar")
     @ResponseBody
     public Usuario add(@RequestBody Usuario usuario) {
-        return usuarioRepository.save(usuario);
+        return pessoaController.save(usuario);
     }
 }

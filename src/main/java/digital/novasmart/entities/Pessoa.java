@@ -2,18 +2,29 @@ package digital.novasmart.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pessoa")
     private Integer id;
 
     private String nome;
     private String sobrenome;
     private String telefone;
     private String documento;
+
+    @ManyToMany
+    @JoinTable(
+            name = "pessoa_perfil",
+            joinColumns = @JoinColumn(name = "id_perfil"),
+            inverseJoinColumns = @JoinColumn(name = "id_pessoa")
+    )
+    private List<Perfil> perfis;
 
     public Pessoa() {
     }
