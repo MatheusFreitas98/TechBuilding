@@ -1,8 +1,6 @@
-package digital.novasmart.entities;
+package digital.novasmart.domain.entity;
 
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "perfil")

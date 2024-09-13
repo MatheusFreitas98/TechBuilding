@@ -1,4 +1,4 @@
-package digital.novasmart.entities;
+package digital.novasmart.domain.entity;
 
 import jakarta.persistence.*;
 
