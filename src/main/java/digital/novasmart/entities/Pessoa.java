@@ -10,7 +10,7 @@ public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_pessoa")
+    @Column(name = "pessoa_id")
     private Integer id;
 
     private String nome;
@@ -18,12 +18,7 @@ public class Pessoa {
     private String telefone;
     private String documento;
 
-    @ManyToMany
-    @JoinTable(
-            name = "pessoa_perfil",
-            joinColumns = @JoinColumn(name = "id_perfil"),
-            inverseJoinColumns = @JoinColumn(name = "id_pessoa")
-    )
+    @OneToMany(mappedBy = "pessoa")
     private List<Perfil> perfis;
 
     public Pessoa() {
@@ -70,5 +65,9 @@ public class Pessoa {
 
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    public List<Perfil> getPerfis() {
+        return perfis;
     }
 }

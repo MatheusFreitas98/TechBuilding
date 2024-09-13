@@ -10,13 +10,14 @@ public class Perfil {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_perfil")
+    @Column(name = "perfil_id")
     private Integer id;
 
     private String descricao;
 
-    @ManyToMany(mappedBy = "perfis")
-    private List<Pessoa> pessoas;
+    @ManyToOne
+    @JoinColumn(name = "pessoa_id")
+    private Pessoa pessoa;
 
     public Perfil() {
     }
@@ -40,5 +41,9 @@ public class Perfil {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 }
