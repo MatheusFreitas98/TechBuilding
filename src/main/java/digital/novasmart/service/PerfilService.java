@@ -1,13 +1,13 @@
 package digital.novasmart.service;
 
-import digital.novasmart.rest.dto.PessoaDTO;
+import digital.novasmart.rest.dto.PerfilDTO;
 
 import java.util.List;
 
 public interface PerfilService {
-    List<PessoaDTO> listarPessoas();
-//    PessoaDTO buscarPessoaPorId(Integer id);
-    PessoaDTO adicionarPessoa(PessoaDTO pessoaDTO);
-//    PessoaDTO atualizarPessoa(Integer id, PessoaDTO pessoaDTO);
+    List<PerfilDTO> listarPerfis();
+    PerfilDTO criarPerfil(PerfilDTO perfilDTO);
+//    PerfilDTO buscarPessoaPorId(Integer id);
+//    PerfilDTO atualizarPessoa(Integer id, PerfilDTO perfilDTO);
 //    void deletarPessoa(Integer id);
 }

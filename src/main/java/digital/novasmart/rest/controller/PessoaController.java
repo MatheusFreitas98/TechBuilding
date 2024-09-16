@@ -14,20 +14,20 @@ import java.util.List;
 public class PessoaController {
 
     @Autowired
-    private final PessoaService pessoaService;
+    private final PessoaService service;
 
-    public PessoaController(PessoaService pessoaService) {
-        this.pessoaService = pessoaService;
+    public PessoaController(PessoaService service) {
+        this.service = service;
     }
 
     @GetMapping("/listar")
     public List<PessoaDTO> listarPessoas() {
-        return pessoaService.listarPessoas();
+        return service.listarPessoas();
     }
 
-    @PostMapping("/adicionar")
+    @PostMapping("/adicionarPessoa")
     public ResponseEntity<PessoaDTO> adicionarPessoa(@RequestBody PessoaDTO pessoaDTO) {
-        PessoaDTO novaPessoa = pessoaService.adicionarPessoa(pessoaDTO);
+        PessoaDTO novaPessoa = service.adicionarPessoa(pessoaDTO);
         return new ResponseEntity<>(novaPessoa, HttpStatus.CREATED);
     }
 }

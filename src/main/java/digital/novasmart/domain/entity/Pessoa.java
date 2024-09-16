@@ -22,9 +22,6 @@ public class Pessoa {
     private String telefone;
     private String documento;
 
-    @OneToMany(mappedBy = "pessoa")
-    private List<Perfil> perfis;
-
     public Pessoa() {
     }
 
