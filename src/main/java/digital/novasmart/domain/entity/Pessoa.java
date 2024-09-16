@@ -21,6 +21,7 @@ public class Pessoa {
     private String sobrenome;
     private String telefone;
     private String documento;
+    private Integer perfilId;
 
     public Pessoa() {
     }
@@ -30,5 +31,10 @@ public class Pessoa {
         this.sobrenome = sobrenome;
         this.telefone = telefone;
         this.documento = documento;
+    }
+
+    public Pessoa(String nome, String sobrenome, String telefone, String documento, Integer perfilId) {
+        this(nome, sobrenome, telefone, documento);
+        this.perfilId = perfilId;
     }
 }
