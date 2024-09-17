@@ -25,6 +25,11 @@ public class PessoaController {
         return service.listarPessoas();
     }
 
+    @GetMapping("/listar-completo")
+    public List<PessoaDTO> listarPessoasCompleto() {
+        return service.listarPessoas();
+    }
+
     @PostMapping("/adicionarPessoa")
     public ResponseEntity<PessoaDTO> adicionarPessoa(@RequestBody PessoaDTO pessoaDTO) {
         PessoaDTO novaPessoa = service.adicionarPessoa(pessoaDTO);

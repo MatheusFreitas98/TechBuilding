@@ -14,7 +14,6 @@ public class PerfilPessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "perfil_pessoa_id")
     private Integer id;
-
     private Integer perfil_id;
     private Integer pessoa_id;
 

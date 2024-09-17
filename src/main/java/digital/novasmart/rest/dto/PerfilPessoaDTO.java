@@ -12,6 +12,8 @@ import lombok.Setter;
 @Setter
 public class PerfilPessoaDTO {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer perfil_id;
     private Integer pessoa_id;
@@ -19,11 +21,12 @@ public class PerfilPessoaDTO {
     public PerfilPessoaDTO() {
     }
 
-    public PerfilPessoaDTO(PerfilPessoa perfilPessoa) {
-        this.id = perfilPessoa.getId();
-        this.perfil_id = perfilPessoa.getPerfil_id();
-        this.pessoa_id = perfilPessoa.getPessoa_id();
+    public PerfilPessoaDTO(Integer perfil_id, Integer pessoa_id) {
+        this.perfil_id = perfil_id;
+        this.pessoa_id = pessoa_id;
     }
 
-
+    public PerfilPessoa toEntity() {
+        return new PerfilPessoa(perfil_id, pessoa_id);
+    }
 }
