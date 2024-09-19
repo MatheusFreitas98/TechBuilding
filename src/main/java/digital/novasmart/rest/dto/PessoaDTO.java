@@ -13,6 +13,7 @@ public class PessoaDTO {
     private String sobrenome;
     private String telefone;
     private String documento;
+    private String perfil;
 
     public PessoaDTO() {
     }

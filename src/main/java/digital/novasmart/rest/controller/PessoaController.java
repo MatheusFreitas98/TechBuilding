@@ -25,7 +25,7 @@ public class PessoaController {
         return service.listarPessoas();
     }
 
-    @GetMapping("/listar-completo")
+    @GetMapping("/listaCompleta")
     public List<PessoaDTO> listarPessoasCompleto() {
         return service.listarPessoas();
     }
