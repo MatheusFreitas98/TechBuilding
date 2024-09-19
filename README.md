@@ -4,7 +4,7 @@
 
 Este projeto é um sistema completo de gerenciamento de condomínios, desenvolvido por mim, **Matheus**, com foco em melhorar a comunicação, organização e gestão de informações relacionadas a moradores, apartamentos, blocos, áreas de lazer, síndicos e funcionários. O sistema incluirá diversas funcionalidades que trará ao usuário final muita clareza e facilidade de acesso à qualquer lugar ou pessoa do condomínio.
 
-Durante minha jornada como desenvolvedor backend especializado em Java, a maior parte da minha experiência foi voltada para a criação de APIs. A criação deste projeto representa um grande salto para mim, pois engloba o ciclo completo de desenvolvimento de software: desde a fase de análise (incluindo a criação de diagramas UML e de classe), passando pelo design de banco de dados, até a implementação de funcionalidades com mapeamento JPA, criação de APIs RESTful e o frontend desenvolvido em React.
+Durante minha jornada como desenvolvedor backend especializado em Java, a maior parte da minha experiência foi voltada para a criação de APIs. A criação deste projeto representa um grande salto para mim, pois engloba o ciclo completo de desenvolvimento de software: desde a fase de análise (incluindo a criação de diagramas UML e de classe), passando pelo design de banco de dados, até a implementação de funcionalidades com mapeamento JPA, criação de APIs RESTful e o frontend desenvolvido em React. Neste repositório, está disponível apenas a aplicação Java. Todo o restante (Diagramas, FrontEnd e "Banco de Dados") serão postados conforme o avanço do projeto, principalmente pois o próprio JPA irá gerar o banco no momento da rodagem.
 
 ### Status do Projeto
 
