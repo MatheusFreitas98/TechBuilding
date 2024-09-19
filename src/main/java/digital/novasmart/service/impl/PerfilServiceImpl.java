@@ -4,6 +4,7 @@ import digital.novasmart.domain.entity.Perfil;
 import digital.novasmart.domain.repository.PerfilRepository;
 import digital.novasmart.rest.dto.PerfilDTO;
 import digital.novasmart.service.PerfilService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,11 +13,8 @@ import java.util.stream.Collectors;
 @Service
 public class PerfilServiceImpl implements PerfilService {
 
+    @Autowired
     private PerfilRepository repository;
-
-    public PerfilServiceImpl(PerfilRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public List<PerfilDTO> listarPerfis() {

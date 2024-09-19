@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface PessoaService {
     List<PessoaDTO> listarPessoas();
-    List<PessoaCompletaDTO> listaCompleta();
+//    List<PessoaCompletaDTO> listaCompleta();
     PessoaDTO adicionarPessoa(PessoaDTO pessoaDTO);
 }

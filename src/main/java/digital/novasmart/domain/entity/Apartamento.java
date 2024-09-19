@@ -13,15 +13,15 @@ public class Apartamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String apartamento;
+    private Short numero;
     private String bloco;
 
     public Apartamento() {
     }
 
-    public Apartamento(Integer id, String apartamento, String bloco) {
+    public Apartamento(Integer id, Short numero, String bloco) {
         this.id = id;
-        this.apartamento = apartamento;
+        this.numero = numero;
         this.bloco = bloco;
     }
 }
