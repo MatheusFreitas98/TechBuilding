@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "apartamento")
 @Getter
 @Setter
+
+@Entity
+@Table(name = "apartamento")
 public class Apartamento {
 
     @Id
@@ -22,9 +23,12 @@ public class Apartamento {
     public Apartamento() {
     }
 
-    public Apartamento(Integer id, Short numero, String bloco) {
+    public Apartamento(Integer id, Short numero, String bloco, String andar, String banheiros, String quartos) {
         this.id = id;
         this.numero = numero;
         this.bloco = bloco;
+        this.andar = andar;
+        this.banheiros = banheiros;
+        this.quartos = quartos;
     }
 }

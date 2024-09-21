@@ -3,12 +3,12 @@ package digital.novasmart.domain.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
 @Setter
+
 @Entity
 public class Contrato {
 
@@ -35,6 +35,6 @@ public class Contrato {
     private String descricao;
 
     public enum TipoContrato {
-        COMPRA, VENDA
+        COMPRA, VENDA, ALUGUEL
     }
 }

@@ -11,6 +11,9 @@ public class ApartamentoDTO {
     private Integer id;
     private Short numero;
     private String bloco;
+    private String andar;
+    private String banheiros;
+    private String quartos;
 
     public ApartamentoDTO() {
     }
@@ -19,9 +22,12 @@ public class ApartamentoDTO {
         this.id = apartamento.getId();
         this.numero = apartamento.getNumero();
         this.bloco = apartamento.getBloco();
+        this.andar = apartamento.getAndar();
+        this.banheiros = apartamento.getBanheiros();
+        this.quartos = apartamento.getQuartos();
     }
 
     public Apartamento toEntity() {
-        return new Apartamento(id, numero, bloco);
+        return new Apartamento(id, numero, bloco, andar, banheiros, quartos);
     }
 }
