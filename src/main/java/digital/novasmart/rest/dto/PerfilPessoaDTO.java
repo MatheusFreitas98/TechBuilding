@@ -1,6 +1,5 @@
 package digital.novasmart.rest.dto;
 
-import digital.novasmart.domain.entity.PerfilPessoa;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;

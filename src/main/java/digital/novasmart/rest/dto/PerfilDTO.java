@@ -1,6 +1,5 @@
 package digital.novasmart.rest.dto;
 
-import digital.novasmart.domain.entity.Perfil;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,6 +1,6 @@
 package digital.novasmart.service;
 
-import digital.novasmart.rest.dto.PessoaCompletaDTO;
+//import digital.novasmart.rest.dto.PessoaCompletaDTO;
 import digital.novasmart.rest.dto.PessoaDTO;
 
 import java.util.List;

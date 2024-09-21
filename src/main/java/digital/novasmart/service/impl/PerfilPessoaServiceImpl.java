@@ -1,10 +1,6 @@
 package digital.novasmart.service.impl;
 
-import digital.novasmart.domain.entity.Perfil;
-import digital.novasmart.domain.entity.PerfilPessoa;
-import digital.novasmart.domain.entity.Pessoa;
 import digital.novasmart.domain.repository.PerfilPessoaRepository;
-import digital.novasmart.domain.repository.PerfilRepository;
 import digital.novasmart.rest.dto.PerfilPessoaDTO;
 import digital.novasmart.service.PerfilPessoaService;
 import org.springframework.stereotype.Service;

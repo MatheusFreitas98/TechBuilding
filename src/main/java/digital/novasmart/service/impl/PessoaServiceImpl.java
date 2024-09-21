@@ -1,6 +1,5 @@
 package digital.novasmart.service.impl;
 
-import digital.novasmart.domain.entity.Pessoa;
 import digital.novasmart.domain.repository.PessoaRepository;
 import digital.novasmart.rest.dto.PessoaDTO;
 import digital.novasmart.service.PessoaService;

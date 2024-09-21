@@ -15,6 +15,9 @@ public class Apartamento {
     private Integer id;
     private Short numero;
     private String bloco;
+    private String andar;
+    private String banheiros;
+    private String quartos;
 
     public Apartamento() {
     }

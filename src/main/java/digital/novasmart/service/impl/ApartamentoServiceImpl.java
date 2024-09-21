@@ -6,10 +6,12 @@ import digital.novasmart.rest.dto.ApartamentoDTO;
 import digital.novasmart.rest.dto.PerfilDTO;
 import digital.novasmart.service.ApartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ApartamentoServiceImpl implements ApartamentoService {
 
     @Autowired
@@ -22,7 +24,9 @@ public class ApartamentoServiceImpl implements ApartamentoService {
     }
 
     @Override
-    public ApartamentoDTO cadastrarApartamento() {
-
+    public ApartamentoDTO cadastrarApartamento(ApartamentoDTO apartamentoDTO) {
+        Apartamento apartamento = new Apartamento(apartamentoDTO.getId(), apartamentoDTO.getNumero(), apartamentoDTO.getBloco());
+        apartamento = repository.save(apartamento);
+        return new ApartamentoDTO(apartamento);
     }
 }

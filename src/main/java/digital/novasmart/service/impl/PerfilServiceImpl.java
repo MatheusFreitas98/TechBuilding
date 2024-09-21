@@ -1,6 +1,5 @@
 package digital.novasmart.service.impl;
 
-import digital.novasmart.domain.entity.Perfil;
 import digital.novasmart.domain.repository.PerfilRepository;
 import digital.novasmart.rest.dto.PerfilDTO;
 import digital.novasmart.service.PerfilService;

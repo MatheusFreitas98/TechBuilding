@@ -13,7 +13,6 @@ import java.util.List;
 @RequestMapping("/pessoas")
 public class PessoaController {
 
-    @Autowired
     private final PessoaService service;
 
     public PessoaController(PessoaService service) {
