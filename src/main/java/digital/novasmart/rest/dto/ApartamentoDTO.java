@@ -1,6 +1,7 @@
 package digital.novasmart.rest.dto;
 
 import digital.novasmart.domain.entity.Apartamento;
+import digital.novasmart.domain.entity.Bloco;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,9 +9,8 @@ import lombok.Setter;
 @Setter
 public class ApartamentoDTO {
 
-    private Integer id;
     private Short numero;
-    private String bloco;
+    private Bloco bloco;
     private String andar;
     private String banheiros;
     private String quartos;
@@ -19,7 +19,6 @@ public class ApartamentoDTO {
     }
 
     public ApartamentoDTO(Apartamento apartamento) {
-        this.id = apartamento.getId();
         this.numero = apartamento.getNumero();
         this.bloco = apartamento.getBloco();
         this.andar = apartamento.getAndar();
@@ -28,6 +27,6 @@ public class ApartamentoDTO {
     }
 
     public Apartamento toEntity() {
-        return new Apartamento(id, numero, bloco, andar, banheiros, quartos);
+        return new Apartamento(numero, bloco, andar, banheiros, quartos);
     }
 }

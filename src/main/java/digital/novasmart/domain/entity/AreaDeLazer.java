@@ -6,8 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
+@Table(name = "area_de_lazer")
 public class AreaDeLazer {
 
     @Id

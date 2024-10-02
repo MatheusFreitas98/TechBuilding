@@ -1,10 +1,15 @@
 package digital.novasmart.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Set;
-
+@Getter
+@Setter
 @Entity
+@Table(name = "condominio")
 public class Condominio {
 
     @Id
@@ -16,10 +21,20 @@ public class Condominio {
     private String telefone;
 
     @OneToMany(mappedBy = "condominio")
-    private Set<Bloco> blocos;
+    private List<Bloco> blocos = new ArrayList<>();
 
     @OneToMany(mappedBy = "condominio")
-    private Set<AreaDeLazer> areasDeLazer;
+    private List<AreaDeLazer> areasDeLazer = new ArrayList<>();
 
-    // Getters and Setters
+    public Condominio() {
+    }
+
+    public Condominio(Integer id, String nome, String endereco, String telefone, Bloco bloco, AreaDeLazer areasDeLazer) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.blocos.add(bloco);
+        this.areasDeLazer.add(areasDeLazer);
+    }
 }

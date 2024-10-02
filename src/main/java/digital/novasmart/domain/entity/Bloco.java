@@ -1,10 +1,16 @@
 package digital.novasmart.domain.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
+@Getter
+@Setter
 @Entity
+@Table(name = "bloco")
 public class Bloco {
 
     @Id
@@ -15,7 +21,18 @@ public class Bloco {
     private String descricao;
 
     @OneToMany(mappedBy = "bloco")
-    private Set<Apartamento> apartamentos;
+    private List<Apartamento> apartamentos = new ArrayList<>();
 
-    // Getters and Setters
+    @ManyToOne
+    private Condominio condominio;
+
+    public Bloco() {
+    }
+
+    public Bloco(Integer id, String nome, String descricao, Apartamento apartamento) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.apartamentos.add(apartamento);
+    }
 }

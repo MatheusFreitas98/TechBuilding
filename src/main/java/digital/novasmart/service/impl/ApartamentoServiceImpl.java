@@ -3,29 +3,28 @@ package digital.novasmart.service.impl;
 import digital.novasmart.domain.entity.Apartamento;
 import digital.novasmart.domain.repository.ApartamentoRepository;
 import digital.novasmart.rest.dto.ApartamentoDTO;
-import digital.novasmart.rest.dto.PerfilDTO;
 import digital.novasmart.service.ApartamentoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ApartamentoServiceImpl implements ApartamentoService {
 
-    @Autowired
-    ApartamentoRepository repository;
+    private final ApartamentoRepository repository;
+
+    public ApartamentoServiceImpl(ApartamentoRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public List<ApartamentoDTO> listarApartamentos() {
-        List<Apartamento> apartamentos = repository.findAll();
-        return apartamentos.stream().map(apartamento -> new ApartamentoDTO(apartamento)).collect(Collectors.toList());
+        return repository.findAll().stream().map(apartamento -> new ApartamentoDTO(apartamento)).toList();
     }
 
     @Override
     public ApartamentoDTO cadastrarApartamento(ApartamentoDTO apartamentoDTO) {
-        Apartamento apartamento = new Apartamento(apartamentoDTO.getId(), apartamentoDTO.getNumero(), apartamentoDTO.getBloco());
+        Apartamento apartamento = apartamentoDTO.toEntity();
         apartamento = repository.save(apartamento);
         return new ApartamentoDTO(apartamento);
     }

@@ -6,8 +6,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 @Entity
+@Table(name = "dependente")
 public class Dependente {
 
     @Id
